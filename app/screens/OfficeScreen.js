@@ -97,7 +97,6 @@ const OfficeScreen = ({ navigation }) => {
     };
     
     
-    
     if (loading) {  // Step 2: Display loading spinner when loading is true
         return (
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -116,9 +115,6 @@ const OfficeScreen = ({ navigation }) => {
             {employees.map((employee) => renderEmployeeItem({ item: employee }))}
         </View>
     );
-
-    
-    
 };
 
 export default OfficeScreen;
@@ -126,7 +122,7 @@ export default OfficeScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        position: 'relative', // Ensures absolute positioned children are relative to this container
+        position: 'relative', 
     },
     image: {
         width: '100%',
@@ -141,9 +137,9 @@ const styles = StyleSheet.create({
     touchableArea: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 5,  // Ensures a larger touch area
-        borderRadius: 5, // Optional: if you want rounded corners
-        // ... [any other styles you'd like for the touchable area]
+        padding: 5,  
+        borderRadius: 5, 
+
     },
     circle: {
         width: 10,

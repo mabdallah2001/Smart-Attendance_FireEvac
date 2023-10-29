@@ -1,6 +1,4 @@
-
-import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, View , Image, LogBox} from 'react-native';
 
@@ -10,21 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import OfficeScreen from './screens/OfficeScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import UserInfoScreen from './screens/UserInfoScreen';
-import SComplex from './pages/SComplex';
-import StudCenter from './pages/StudCenter';
-import Physics from './pages/Physics';
-import SBA from './pages/SBA';
-import Library from './pages/Library';
-import FreeP1 from './pages/FreeP1';
-import FreeP2 from './pages/FreeP2';
-import EditProf from './pages/EditProf'
-import Subscription from './pages/Subscription'
-import Funds from './pages/Funds'
-import ContactUs from './pages/ContactUs'
-import Payment from './pages/Payment'
 
-
-import {StripeProvider} from '@stripe/stripe-react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -66,8 +50,6 @@ function Home() {
             height: 30,
             marginTop: 5,}}
           />
-        
-
         </View>
        )
      }}/>
@@ -92,42 +74,14 @@ function App() {
 
 
   return (
-    <StripeProvider publishableKey="pk_test_51KTugfB8vhb9ZmvPaDZM44Ua4pV6IepGmG0or84O3aPSRXVUi60HziqVPVW8yCJSItVPlR2ghZ2FyaxL3Evx5DGD008ykP8eSx">
-    
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={globalScreenOptions}>
-        {/* <Stack.Screen name = 'Login' component = {LoginScreen} />
-        <Stack.Screen name = 'Register' component = {RegisterScreen} /> */}
-        <Stack.Screen options={{headerShown: false}} name = 'HomeNav' component = {Home} />
-        <Stack.Screen name = 'Sports Complex' component = {SComplex} />
-        <Stack.Screen name = 'Student Center' component = {StudCenter} />
-        <Stack.Screen name = 'Physics' component = {Physics} />
-        <Stack.Screen name = 'SBA' component = {SBA} />
-        <Stack.Screen name = 'Library' component = {Library} />
-        <Stack.Screen name = 'Free Parking 1' component = {FreeP1} />
-        <Stack.Screen name = 'Free Parking 2' component = {FreeP2} />
-        <Stack.Screen name = 'Edit Profile' component = {EditProf} />
-        <Stack.Screen name = 'Subscription' component = {Subscription} />
-        <Stack.Screen name = 'Funds' component = {Funds} />
-        <Stack.Screen name = 'Contact' component = {ContactUs} />
-        <Stack.Screen name="UserInfo" component={UserInfoScreen} />
-
-        
-        <Stack.Screen name = 'Payment' component = {Payment} />
-        
-
-
-
-
-      </Stack.Navigator>
-     
-
-      </NavigationContainer>
-      </StripeProvider>
-
-    
-  
-
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={globalScreenOptions}>
+          <Stack.Screen name = 'Login' component = {LoginScreen} />
+          <Stack.Screen name = 'Register' component = {RegisterScreen} />
+          <Stack.Screen options={{headerShown: false}} name = 'HomeNav' component = {Home} />
+          <Stack.Screen name="UserInfo" component={UserInfoScreen} />
+        </Stack.Navigator>
+        </NavigationContainer>
   );
 }
 

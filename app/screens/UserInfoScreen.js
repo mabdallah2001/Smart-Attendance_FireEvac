@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { db } from '../firebase';
 
 const UserInfoScreen = ({ navigation, route }) => {
@@ -60,8 +60,9 @@ const UserInfoScreen = ({ navigation, route }) => {
         key => ![...mainKeys, 'Location', 'Date', 'FirstName', 'LastName'].includes(key)
     )];
 
+   
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <Text style={styles.header}>Details</Text>
             {mainKeys.map((key, index) => (
                 employeeData[key] !== undefined && (
@@ -80,7 +81,7 @@ const UserInfoScreen = ({ navigation, route }) => {
                     </View>
                 )
             ))}
-        </View>
+        </ScrollView>
     );
     
 };
@@ -92,15 +93,15 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     header: {
-        fontSize: 24,
+        fontSize: 26,
         fontWeight: 'bold',
         marginBottom: 20,
     },
     subheader: {
-        fontSize: 20,
+        fontSize: 17,
         fontWeight: 'bold',
-        marginTop: 20,
-        marginBottom: 10,
+        marginTop: 36,
+        marginBottom: 14,
     },
     row: {
         flexDirection: 'row',
